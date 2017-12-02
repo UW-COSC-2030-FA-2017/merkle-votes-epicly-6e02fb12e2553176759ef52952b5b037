@@ -1,3 +1,4 @@
+#include "pMT.h"
 
 pMT::pMT(int hashSelect)
 /**
@@ -6,6 +7,7 @@ pMT::pMT(int hashSelect)
  * @return 
  */
 {
+	
 }
 
 pMT::~pMT()
@@ -76,6 +78,18 @@ string pMT::hash_1(string key)
  * @return a hash of the key
  */
 {
+	int hash = 54059;
+	char ch[32];
+	ch  key.toCharArray();
+	int xlength = key.length();
+
+	int i, sum;
+	for (sum = 0, i = 0; i < key.length(); i++)
+		sum += ch[i];
+	return sum % hash;
+
+
+
 }
 
 string pMT::hash_2(string key)
